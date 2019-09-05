@@ -1,0 +1,36 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes" class="col-1-4">
+    <div class="module hero">
+      <h4>{{ hero.name }}</h4>
+    </div>
+  </a>
+
+  <div>
+    <h1>{{ title }}</h1>
+
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="locations[0].lat" [longitude]="locations[0].lng" (mapClick)="clickedMap($event)">
+      <!-- <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="clicked">
+        <agm-info-window>
+          <span>Latitude: {{ lat.toFixed(2) }}</span> &nbsp; &nbsp;
+          <span>Longitude: {{ lng.toFixed(2) }}</span>
+        </agm-info-window>
+      </agm-marker> -->
+
+
+      <agm-marker-cluster
+        imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+        <agm-marker *ngFor="let coords of locations" [latitude]="coords.lat" [longitude]="coords.lng" [iconUrl]="''">
+          <agm-info-window>
+            <p>
+              <span>Latitude: {{ coords.lat.toFixed(2) }}</span> &nbsp; &nbsp;
+              <span>Longitude: {{ coords.lng.toFixed(2) }}</span>
+            </p>
+          </agm-info-window>
+        </agm-marker>
+      </agm-marker-cluster>
+    </agm-map>
+  </div>
+</div>

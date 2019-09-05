@@ -1,0 +1,12 @@
+.dougnut-container {
+  display: block;
+  margin-top: 5em;
+  position: relative;
+}
+
+#name-dougnut {
+  display: block;
+  position: absolute;
+  right: 47%;
+  top: 50%;
+}
