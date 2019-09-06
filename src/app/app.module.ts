@@ -33,7 +33,7 @@ import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
     AppRoutingModule,
     ChartsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC-queZbcoVVI1OwNR5eexCzrG0-upXQMM' // for tulaa
+      apiKey: ''
     }),
     AgmJsMarkerClustererModule
   ],
